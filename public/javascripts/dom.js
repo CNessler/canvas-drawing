@@ -5,7 +5,15 @@ var circleArray = [];
 canvas.addEventListener('click', on_canvas_click);
 var squareChange = document.getElementById('squareChange');
 var circleChange = document.getElementById('circleChange');
+var removeSquare = document.getElementById('squares');
+var removeCircle = document.getElementById('circles');
+var eraseCanvas = document.getElementById('clear');
 
+eraseCanvas.addEventListener('click', function () {
+  var board = document.getElementById('canvas');
+  var ctx = board.getContext("2d");
+  ctx.clearRect(0,0,500,500);
+})
 
 function Shape(x, y, w, color) {
   this.x = x;
@@ -40,16 +48,17 @@ squareChange.addEventListener('click', function () {
   }
 })
 
-Square.prototype.colorChange = function () {
+Square.prototype.eraseSquare = function () {
   ctx.beginPath();
-  ctx.fillStyle=  document.getElementById('color').value;
+  ctx.fillStyle=  '#ffffff';
   ctx.rect(this.x, this.y, this.w*2, this.w*2);
   ctx.fill();
 }
 
-squareChange.addEventListener('click', function () {
+removeSquare.addEventListener('click', function () {
+  alert('hi')
   for (var i = 0; i < squareArray.length; i++) {
-    squareArray[i].colorChange();
+    squareArray[i].eraseSquare();
   }
 })
 
@@ -76,6 +85,20 @@ Circle.prototype.circChange = function () {
 circleChange.addEventListener('click', function () {
   for (var i = 0; i < circleArray.length; i++) {
     circleArray[i].circChange();
+  }
+})
+
+Circle.prototype.eraseCircle = function () {
+  ctx.beginPath();
+  ctx.fillStyle=  '#ffffff';
+  ctx.arc(this.x, this.y, this.w, 0, Math.PI*2, false);
+  ctx.fill();
+}
+
+removeCircle.addEventListener('click', function () {
+  alert('hi')
+  for (var i = 0; i < circleArray.length; i++) {
+    circleArray[i].eraseCircle();
   }
 })
 
