@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h1
+  canvas#canvas(height='500' width='500')
+  form(action='/' method='post')
+  label Choose a shape
+    select
+      option#circle(value='circle') Circle
+      option#square(value='square') Square
+  label Color 
+    input(type='color' id='color' value='#ffffff')
+  label width
+    input(type='number' id='width')
+  button#squareChange Change all squares to same color
+  button#circleChange Change all circles to same color
+    
+
+  script(src='/javascripts/dom.js')
