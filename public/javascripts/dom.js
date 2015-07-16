@@ -8,6 +8,7 @@ var circleChange = document.getElementById('circleChange');
 var removeSquare = document.getElementById('squares');
 var removeCircle = document.getElementById('circles');
 var eraseCanvas = document.getElementById('clear');
+var randomFill = document.getElementById('random');
 
 eraseCanvas.addEventListener('click', function () {
   var board = document.getElementById('canvas');
@@ -56,7 +57,6 @@ Square.prototype.eraseSquare = function () {
 }
 
 removeSquare.addEventListener('click', function () {
-  alert('hi')
   for (var i = 0; i < squareArray.length; i++) {
     squareArray[i].eraseSquare();
   }
@@ -95,12 +95,48 @@ Circle.prototype.eraseCircle = function () {
   ctx.fill();
 }
 
+// Circle.prototype.randomCircle = function () {
+//   ctx.beginPath();
+//   ctx.fillStyle= hue;
+//   ctx.arc(randomInt, randomInt, randomInt, 0, Math.PI*2, false);
+//   ctx.fill();
+// }
+
 removeCircle.addEventListener('click', function () {
-  alert('hi')
   for (var i = 0; i < circleArray.length; i++) {
     circleArray[i].eraseCircle();
   }
 })
+
+var hue = 'rgb(' + (Math.floor(Math.random() * 256))
+ + ',' + (Math.floor(Math.random() * 256)) + ',' +
+ (Math.floor(Math.random() * 256)) + ')';
+
+var randomInt = Math.floor(Math.random()*300)
+
+randomFill.addEventListener('click', randomCircle)
+
+function randomCircle() {
+  for (var i = 0; i < 250; i++) {
+    var x = Math.floor(Math.random()*300)
+    var y = Math.floor(Math.random()*300)
+    var w = Math.floor(Math.random()*100)
+    var color = 'rgb(' + (Math.floor(Math.random() * 256))
+     + ',' + (Math.floor(Math.random() * 256)) + ',' +
+     (Math.floor(Math.random() * 256)) + ')';
+    if(i % 2 === 0){
+    var circle = new Circle(x, y, w, color);
+      circle.draw();
+      circleArray.push(circle);
+      console.log(circleArray);
+    } else {
+      var square = new Square(x, y, w, color)
+      square.draw();
+      squareArray.push(square);
+      console.log(squareArray);
+    }
+  }
+}
 
 function on_canvas_click(ev) {
     var color = document.getElementById('color').value;
