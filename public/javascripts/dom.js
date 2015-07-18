@@ -118,8 +118,8 @@ randomFill.addEventListener('click', randomCircle)
 
 function randomCircle() {
   for (var i = 0; i < 250; i++) {
-    var x = Math.floor(Math.random()*300)
-    var y = Math.floor(Math.random()*300)
+    var x = Math.floor(Math.random()*500)
+    var y = Math.floor(Math.random()*500)
     var w = Math.floor(Math.random()*100)
     var color = 'rgb(' + (Math.floor(Math.random() * 256))
      + ',' + (Math.floor(Math.random() * 256)) + ',' +

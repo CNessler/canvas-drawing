@@ -1,23 +1,35 @@
 extends layout
 
 block content
-  h1
-  canvas#canvas(height='500' width='500')
-  form(action='/' method='post')
-  label Choose a shape
-    select
-      option#circle(value='circle') Circle
-      option#square(value='square') Square
-  label Color 
-    input(type='color' id='color' value='#ffffff')
-  label width
-    input(type='number' id='width')
-  button#squareChange Change all squares to same color
-  button#circleChange Change all circles to same color
-  button#squares Erase squares
-  button#circles Erase circles
-  button#clear Erase canvas
-  button#random Randomly fill
+  div.main
+    div.canvas
+    h1
+    canvas#canvas(height='500' width='500')
+    div.form
+      form(action='/' method='post')
+      label Choose a shape:
+        select.shape
+          option#circle(value='circle') Circle
+          option#square(value='square') Square
+      p    
+      label Color: 
+        input.color(type='color' id='color' value='#ffffff')
+      p
+      label Width:
+        input.width(type='number' id='width' value='50')
+      p
+        
+      button#squareChange Change all squares to same color
+      
+      button#circleChange Change all circles to same color
+      p
+      button#squares Erase squares
+      
+      button#circles Erase circles
+      p
+      button#clear Erase canvas
+      p
+      button#random Randomly fill
     
 
   script(src='/javascripts/dom.js')

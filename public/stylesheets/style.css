@@ -1,12 +1,39 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.main {
+  width: 1200px;
+  margin: 0 auto;
 }
-
-a {
-  color: #00B7FF;
-}
-
 canvas {
   border: 1px solid black;
+  display: inline-block;
+  /*position: relative;*/
+}
+#squareChange, #squares, #circleChange, #circles {
+  width: 50%;
+}
+.color, .width, .shape {
+  margin-left: 15px;
+}
+
+.width {
+  height: 20px;
+}
+
+#clear, #random {
+  display: block;
+  width: 200px;
+  margin: 0 auto;
+}
+.form {
+  padding-left: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 1px solid black;
+  display: inline-block;
+  position: relative;
+  width: 50%;
+  float: right;
+}
+
+.colHalf {
+  width:50%;
 }
