@@ -1,3 +1,7 @@
+body {
+  background-color: #CFEBDF;
+
+}
 .main {
   width: 1200px;
   margin: 0 auto;
@@ -5,26 +9,57 @@
 canvas {
   border: 1px solid black;
   display: inline-block;
+  background-color: white;
   /*position: relative;*/
 }
-#squareChange, #squares, #circleChange, #circles {
+/*,  {
   width: 50%;
-}
+  height: 40px;
+  border-radius: 8px;
+  font-size: 100%;
+}*/
 .color, .width, .shape {
   margin-left: 15px;
+  font-size: 15px;;
+}
+#squares, #squareChange {
+  height: 120px;
+  width: 120px;
+  font-size: 120%;
+  margin-left: 140px;
+  margin-right: 80px;
+  background-color: #9BC4CB;
 }
 
+#circles,#circleChange {
+  border-radius: 50%;
+  height: 120px;
+  width: 120px;
+  font-size: 120%;
+  background-color: #5F634F;
+}
+label {
+  font-size: 20px;;
+}
 .width {
   height: 20px;
 }
 
 #clear, #random {
   display: block;
-  width: 200px;
+  width: 300px;
   margin: 0 auto;
+  height: 40px;
+  border-radius: 8px;
+  font-size: 100%;
+}
+
+#clear {
+  background-color: #DBEFBC;
 }
 .form {
   padding-left: 25px;
+  padding-right: 25px;
   padding-top: 10px;
   padding-bottom: 10px;
   border: 1px solid black;
@@ -32,6 +67,7 @@ canvas {
   position: relative;
   width: 50%;
   float: right;
+  background-color: #E2FADB;
 }
 
 .colHalf {
