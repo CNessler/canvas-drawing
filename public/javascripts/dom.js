@@ -62,7 +62,7 @@ removeSquare.addEventListener('click', function () {
   for (var i = 0; i < squareArray.length; i++) {
     squareArray[i].eraseSquare();
   }
-  // squareArray = null;
+  squareArray = [];
 })
 
 function Circle(x, y, w, color) {
@@ -109,7 +109,7 @@ removeCircle.addEventListener('click', function () {
   for (var i = 0; i < circleArray.length; i++) {
     circleArray[i].eraseCircle();
   }
-    // circleArray = [];
+    circleArray = [];
 })
 
 var hue = 'rgb(' + (Math.floor(Math.random() * 256))
