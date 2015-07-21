@@ -14,6 +14,8 @@ eraseCanvas.addEventListener('click', function () {
   var board = document.getElementById('canvas');
   var ctx = board.getContext("2d");
   ctx.clearRect(0,0,500,500);
+  circleArray = [];
+  squareArray = [];
 })
 
 function Shape(x, y, w, color) {
@@ -60,6 +62,7 @@ removeSquare.addEventListener('click', function () {
   for (var i = 0; i < squareArray.length; i++) {
     squareArray[i].eraseSquare();
   }
+  // squareArray = null;
 })
 
 function Circle(x, y, w, color) {
@@ -106,6 +109,7 @@ removeCircle.addEventListener('click', function () {
   for (var i = 0; i < circleArray.length; i++) {
     circleArray[i].eraseCircle();
   }
+    // circleArray = [];
 })
 
 var hue = 'rgb(' + (Math.floor(Math.random() * 256))
@@ -128,12 +132,12 @@ function randomCircle() {
     var circle = new Circle(x, y, w, color);
       circle.draw();
       circleArray.push(circle);
-      console.log(circleArray);
+      // console.log(circleArray);
     } else {
       var square = new Square(x, y, w, color)
       square.draw();
       squareArray.push(square);
-      console.log(squareArray);
+      // console.log(squareArray);
     }
   }
 }
@@ -154,4 +158,5 @@ function on_canvas_click(ev) {
     squareArray.push(square);
     }
     console.log(circleArray);
+    console.log(squareArray);
 }
